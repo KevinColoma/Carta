@@ -24,5 +24,10 @@ yesBtn.addEventListener("click", () => {
     heartLoader.style.display = "none";
     resultContainer.style.display = "inherit";
     gifResult.play();
+
+    // Add redirection after 5 seconds
+    setTimeout(() => {
+      window.location.href = "./love letter 2.html"; // Replace with your desired URL
+    }, 5000);
   }, 3000);
 });

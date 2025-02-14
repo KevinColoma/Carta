@@ -78,7 +78,7 @@ body {
   }
 
   .button-container {
-    flex-direction: column; /* Botones en columna */
+    flex-direction: row; /* Botones en columna */
     gap: 3rem;
   }
 

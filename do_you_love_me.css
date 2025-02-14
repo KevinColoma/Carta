@@ -79,12 +79,14 @@ body {
 
   .button-container {
     flex-direction: column; /* Botones en columna */
-    gap: 1rem;
+    gap: 3rem;
   }
 
   .btn {
     font-size: 16px; /* Tamaño más pequeño */
     padding: 8px 16px;
+    margin: 15px;
+
   }
 
   .yes-btn,

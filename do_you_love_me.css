@@ -72,9 +72,32 @@ body {
 .no-btn {
   left: 54%;
 }
+@media (max-width: 600px) {
+  .question {
+    font-size: 2rem; /* Reducir tamaño de texto */
+  }
+
+  .button-container {
+    flex-direction: column; /* Botones en columna */
+    gap: 1rem;
+  }
+
+  .btn {
+    font-size: 16px; /* Tamaño más pequeño */
+    padding: 8px 16px;
+  }
+
+  .yes-btn,
+  .no-btn {
+    position: static; /* Evitar posiciones absolutas en móviles */
+  }
+}
+
+
 
 .result-container {
   display: none;
+  
   position: absolute;
   top: 40%;
   left: 50%;

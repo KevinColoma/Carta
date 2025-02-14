@@ -5,29 +5,30 @@ const heartLoader = document.querySelector(".cssload-main");
 const yesBtn = document.querySelector(".js-yes-btn");
 const noBtn = document.querySelector(".js-no-btn");
 
-// /change the postion of no button
-noBtn.addEventListener("mouseover", () => {
-  const newX = Math.floor(Math.random() * questionContainer.offsetWidth);
-  const newY = Math.floor(Math.random() * questionContainer.offsetWidth);
+// Change the position of no button on hover and touch
+function moveNoButton() {
+  const newX = Math.floor(Math.random() * (questionContainer.offsetWidth - noBtn.offsetWidth));
+  const newY = Math.floor(Math.random() * (questionContainer.offsetHeight - noBtn.offsetHeight));
 
+  noBtn.style.position = "absolute";
   noBtn.style.left = `${newX}px`;
   noBtn.style.top = `${newY}px`;
-});
+}
 
-// yes button functionality
+noBtn.addEventListener("mouseover", moveNoButton);
+noBtn.addEventListener("touchstart", moveNoButton); // For mobile support
 
+// Yes button functionality
 yesBtn.addEventListener("click", () => {
   questionContainer.style.display = "none";
   heartLoader.style.display = "inherit";
 
-  const timeoutId = setTimeout(() => {
+  setTimeout(() => {
     heartLoader.style.display = "none";
     resultContainer.style.display = "inherit";
-    gifResult.play();
-
-    // Add redirection after 5 seconds
-    setTimeout(() => {
-      window.location.href = "./love letter 2.html"; // Replace with your desired URL
-    }, 5000);
+   
+ // gifResult.play();
+    
   }, 3000);
+  window.location.href = "./love letter 2.html"; // Replace with your desired URL
 });
